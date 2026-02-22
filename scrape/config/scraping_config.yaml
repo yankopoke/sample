@@ -1,0 +1,49 @@
+# scraping_config.yaml
+
+# Target Years (Can be overridden by --years argument)
+years:
+  - 2020
+  - 2021
+  - 2022
+
+# Output directory for data files
+output_dir: "./scrape/data"
+
+# Steps to run by default
+steps:
+  calendar: true
+  race_list: true
+  race_detail: true
+
+# Wait time between requests (seconds)
+# if min_wait/max_wait are set, they override wait_time with a random value in range
+wait_time: 1
+min_wait: 3
+max_wait: 7
+
+# User-Agent for requests (list for random selection)
+user_agent:
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:115.0) Gecko/20100101 Firefox/115.0"
+  - "Mozilla/5.0 (macintosh; Intel Mac OS X 10.15; rv:115.0) Gecko/20100101 Firefox/115.0"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Safari/605.1.15"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.0.0"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 OPR/85.0.4341.72"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 OPR/85.0.4341.72"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Vivaldi/5.3.2679.55"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Vivaldi/5.3.2679.55"
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Brave/1.40.107"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Brave/1.40.107"
+
+# Output filename templates
+filenames:
+  race_links: "race_links_{year}.csv"
+  individual_urls: "individual_race_urls_{year}.csv"
+  race_data: "race_data_{year}.csv"
+
+# Base URLs
+urls:
+  calendar_base: "https://race.netkeiba.com/top/calendar.html"
+  race_list_ajax: "https://race.netkeiba.com/top/race_list_sub.html"
+  race_detail_base: "https://db.netkeiba.com/race/"
