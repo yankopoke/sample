@@ -1,4 +1,5 @@
 schema: spec-driven
+language: ja  # 日本語設定
 
 # Project context (optional)
 # This is shown to AI when creating artifacts.
